@@ -17,7 +17,7 @@ after_success:
   # Login in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push ukernel/multi-client
-  - docker push ukernel/multi-nginx
-  - docker push ukernel/multi-server
-  - docker push ukernel/multi-worker
+  - docker push slacknet/multi-client
+  - docker push slacknet/multi-nginx
+  - docker push slacknet/multi-server
+  - docker push slacknet/multi-worker
