@@ -1,4 +1,6 @@
-language: generic
+language: perl
+perl:
+  - "5.24"
 sudo: required
 services: 
   - docker
