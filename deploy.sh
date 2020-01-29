@@ -1,6 +1,6 @@
 docker build -t ukernel/multi-client:latest -t ukernel/multi-client:$SHA -f ./client/Dockerfile ./client
 docker build -t ukernel/multi-server:latest -t ukernel/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t ukernel /multi-worker:latest -t ukernel/multi-worker:$SHA -f ./worker/Dockerfile ./worker
+docker build -t ukernel/multi-worker:latest -t ukernel/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push ukernel/multi-client:latest 
 docker push ukernel/multi-server:latest
