@@ -1,6 +1,6 @@
-language: perl
-perl:
-  - "5.24"
+language: ruby
+ruby:
+  - "*"
 sudo: required
 services: 
   - docker
