@@ -6,7 +6,6 @@ env:
   global:
       - SHA=$(git rev-parse HEAD)
       - CLOUDSDK_CORE_DISABLE_PROMPTS=1
-
 before_install:
   - openssl aes-256-cbc -K $encrypted_b0c1a7106a25_key -iv $encrypted_b0c1a7106a25_iv -in service-account.json.enc -out service-account.json -d
   - curl https://sdk.cloud.google.com | bash > /dev/null; 
@@ -18,7 +17,6 @@ before_install:
   - gcloud container clusters get-credentials multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t ukernel/react-test -f ./client/Dockerfile.dev ./client
-  - heroku rake db:migrate 
 
 script:
   - docker run -e CI=true ukernel/react-test npm run test
