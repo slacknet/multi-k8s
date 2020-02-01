@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate 
+metadata:
+  name: cyberk-net-tls
+spec:
+  secretName: cyberk-net 
+  issuerRef:  
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: cyberk.net
+  dnsNames:
+    - cyberk.net
+    - www.cyberk.net
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - cyberk.net
+          - www.cyberk.net 
